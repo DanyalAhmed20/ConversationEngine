@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Welcome to MuteAssistant!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/fontawesome5-overrides.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/smoothproducts.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">MuteAssistant</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About Us</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section id="section-1" class="clean-block clean-hero" style="background-image:url('{{ url_for('static', filename='assets/img/tech/image4.jpg') }}');color:rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2 class="swing animated">Welcome to MuteAssistant!</h2>
+                <p class="tada animated">Are you a person who finds it really hard to convey anything that you want to say? Well, you've come to the right place!</p><button class="btn btn-outline-light btn-lg" type="button" id="find-out-more">Find out more</button></div>
+        </section>
+        <section id="section-2" class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">We've got what you need</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <div>
+                            <p>Our platform will help you to convey what you want to say through a unique language known as sign language.&nbsp;</p>
+                        </div><button class="btn btn-primary" type="button" onclick="location.href='appPage.html';">Get started!</button></div>
+                </div>
+            </div>
+        </section>
+        <section id="section-3" class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">At your service</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon ion-android-hand icon"></i>
+                        <h4>Say what you want</h4>
+                        <p>Use your hand to make signs to display the appropriate letter. You can find out more in the tutorial section.&nbsp;</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="fas fa-code icon"></i>
+                        <h4>Up to date</h4>
+                        <p>All dependencies are kept current to keep things fresh.</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="fa fa-refresh icon"></i>
+                        <h4>Compatible on all devices</h4>
+                        <p>Sky is the limit! Our app is compatible on all devices and all browsers.&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="page-footer dark">
+            <div class="clean-block add-on social-icons">
+                <div class="icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
+            </div>
+            <div class="footer-copyright">
+                <p>All rights reserved &reg;&nbsp; MuteAssistant </p>
+            </div>
+        </footer>
+    </main>
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/smoothproducts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/theme.js') }}"></script>
+    <script type="text/javascript">
+        $("#find-out-more").click(function() {
+            $('html,body').animate({
+                scrollTop: $("#section-2").offset().top},'slow');
+        });
+    </script>
+</body>
+
+</html>
