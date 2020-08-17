@@ -10,13 +10,14 @@ import cv2
 
 app = Flask(__name__)
 
+
 # model = load_model('asl2.h5')
 
 def gen(camera):
 	while True:
 		frame = camera.get_frame()
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
+		render_template('/appPage.html', prediction=pred)
 
 @app.route('/')
 def homePage():
@@ -40,8 +41,7 @@ def home():
 
 @app.route('/video_feed')
 def video_feed():
-    return Response(gen(VideoCamera()),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
 	app.run(debug = True)
