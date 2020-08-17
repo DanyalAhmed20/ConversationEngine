@@ -33,14 +33,13 @@ class VideoCamera(object):
            #extracting frames
         name = ['A','B','C','D','E']
         ret, frame = self.video.read()
-        frame=cv2.resize(frame,None,fx=ds_factor,fy=ds_factor,
-        interpolation=cv2.INTER_AREA)
-        gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-        x = image.img_to_array(gray)
-		x = np.expand_dims(x, axis=0)
-		with graph.as_default():
-			pred = model.pred_classes(x)
-			print(pred)
+        frame1=cv2.resize(frame,(64,64))
+        # gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+        x = image.img_to_array(frame1)
+        x = np.expand_dims(x, axis=0)
+        with graph.as_default():
+            pred = model.predict_classes(x)
+            print(pred)
         cv2.putText(frame, text="This belongs to "+str(name[pred[0]]), org = (10,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale = 1, color=(0,255,255))
         # encode OpenCV raw frame to jpg and displaying it
         ret, jpeg = cv2.imencode('.jpg', frame)
