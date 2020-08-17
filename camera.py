@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 14 15:36:23 2020
-
-@author: Myrone
-"""
-
-
-#camera.py
-# import the necessary packages
 import cv2
 from keras.models import load_model
 from keras.preprocessing import image
@@ -15,6 +5,7 @@ import tensorflow as tf
 global graph
 graph = tf.get_default_graph()
 import numpy as np
+from flask import render_template
 
 # defining face detector
 ds_factor=0.6
@@ -39,7 +30,6 @@ class VideoCamera(object):
         x = np.expand_dims(x, axis=0)
         with graph.as_default():
             pred = model.predict_classes(x)
-            print(pred)
         cv2.putText(frame, text="This belongs to "+str(name[pred[0]]), org = (10,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale = 1, color=(0,255,255))
         # encode OpenCV raw frame to jpg and displaying it
         ret, jpeg = cv2.imencode('.jpg', frame)

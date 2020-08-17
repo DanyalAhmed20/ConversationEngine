@@ -9,7 +9,7 @@ import numpy as np
 import cv2
 
 app = Flask(__name__)
-
+global pred
 
 # model = load_model('asl2.h5')
 
